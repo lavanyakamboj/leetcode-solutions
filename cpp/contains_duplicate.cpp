@@ -3,18 +3,19 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/contains-duplicate/
 // Synced by: LinkCode
-// Date: 7/8/2026, 5:17:17 PM
+// Date: 7/8/2026, 5:19:40 PM
 // ======================================
 
 
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        for(int i=0;i<nums.size()-1;i++){
-            if(nums[i]==nums[i+1]){
+        unordered_set<int> map;
+        for(int i=0;i<nums.size();i++){
+            if(map.count(nums[i])){
                 return true;
             }
+            map.insert(nums[i]);
         }
         return false;
     }
