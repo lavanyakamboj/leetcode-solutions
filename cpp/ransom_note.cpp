@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/ransom-note/
 // Synced by: LinkCode
-// Date: 7/10/2026, 11:59:33 AM
+// Date: 7/10/2026, 12:27:37 PM
 // ======================================
 
 
