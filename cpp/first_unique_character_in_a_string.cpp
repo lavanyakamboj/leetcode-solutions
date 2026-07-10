@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/first-unique-character-in-a-string/
 // Synced by: LinkCode
-// Date: 7/10/2026, 10:56:49 AM
+// Date: 7/10/2026, 10:57:11 AM
 // ======================================
 
 
@@ -16,11 +16,9 @@ public:
         }
         for(int i=0;i<s.size();i++){
             char str = s[i];
-            if(map.count(str)){
                 if(map[str]==1){
                     return i;
                 }
-            }
         }
         return -1;
     }
