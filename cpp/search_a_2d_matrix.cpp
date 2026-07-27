@@ -3,10 +3,11 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/search-a-2d-matrix/
 // Synced by: LinkCode
-// Date: 7/27/2026, 9:30:07 PM
+// Date: 7/27/2026, 9:30:36 PM
 // ======================================
 
 
+// binary search on a particular row of matrix having element 
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
