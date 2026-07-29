@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/time-based-key-value-store/
 // Synced by: LinkCode
-// Date: 7/29/2026, 10:05:24 PM
+// Date: 7/29/2026, 11:58:00 PM
 // ======================================
 
 
@@ -27,7 +27,8 @@ public:
         //         break;
         //     }
 
-        auto &vec = mp[key];
+        auto &vec = mp[key]; // used reerance because agr new bnyenge to new bnane me o(n)time jyega
+ 
         int l = 0;
         int r = vec.size() - 1;
         string ans = "";
