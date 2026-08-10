@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/binary-tree-inorder-traversal/
 // Synced by: LinkCode
-// Date: 8/10/2026, 9:12:17 PM
+// Date: 8/10/2026, 9:12:28 PM
 // ======================================
 
 
@@ -21,8 +21,8 @@
 class Solution {
 public:
     void inorder(TreeNode* root , vector<int>& ans){
-            if (root == NULL)
-            return;
+        if (root == NULL)
+          return;
 
         // traverse left 
         inorder(root->left, ans);
