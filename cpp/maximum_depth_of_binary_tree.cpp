@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/maximum-depth-of-binary-tree/
 // Synced by: LinkCode
-// Date: 8/12/2026, 9:41:42 PM
+// Date: 8/14/2026, 9:05:32 PM
 // ======================================
 
 
@@ -31,9 +31,7 @@ public:
         // depth of the right nodes
         int d2 = maxDepth(curr->right);
         
-        if(d1>=d2)
-            return d1+1;
-        else
-            return d2+1;
+        int ans = max(d1,d2);
+        return ans+1;
     }
 };
