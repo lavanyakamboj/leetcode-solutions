@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/longest-subsequence-with-non-zero-bitwise-xor/
 // Synced by: LinkCode
-// Date: 8/15/2026, 9:55:42 PM
+// Date: 8/15/2026, 10:17:52 PM
 // ======================================
 
 
@@ -15,7 +15,7 @@ public:
         for(int i =0; i < nums.size(); i++){
             res = res ^ nums[i];
             if(nums[i] != 0){
-                nonzero = true;
+                nonzero = true;  // to know if there is any non zero element in array
             }
         }
     if(res != 0)
