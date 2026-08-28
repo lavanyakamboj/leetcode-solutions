@@ -3,9 +3,11 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/top-k-frequent-elements/
 // Synced by: LinkCode
-// Date: 7/9/2026, 9:27:10 PM
+// Date: 8/28/2026, 9:07:55 PM
 // ======================================
 
+
+//  --- unordered map ---
 
 class Solution {
 public:
@@ -14,7 +16,6 @@ public:
         for(int i=0 ;i<nums.size();i++){
             map[nums[i]]++;
         }
-
         vector<vector<int>>freq ;
         for(auto i : map){
             freq.push_back({i.second,i.first});
@@ -23,8 +24,10 @@ public:
 
         vector<int> res;
         for(int i=0;i<k;i++){
+// return the elem stored in 2D array -- [i][0]-- frequency and [i][1]--elm
             res.push_back(freq[i][1]);
         }
         return res;
     }
-};      
+};   
+
