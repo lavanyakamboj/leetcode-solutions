@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/invert-binary-tree/
 // Synced by: LinkCode
-// Date: 8/12/2026, 10:20:20 PM
+// Date: 8/30/2026, 8:41:50 PM
 // ======================================
 
 
@@ -27,7 +27,6 @@ public:
         invertTree(root->left);
         invertTree(root->right);
         swap(root->left,root->right);
-
         return root;
     }
 };
