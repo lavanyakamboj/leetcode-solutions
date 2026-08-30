@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/maximum-depth-of-binary-tree/
 // Synced by: LinkCode
-// Date: 8/14/2026, 9:05:32 PM
+// Date: 8/30/2026, 8:38:18 PM
 // ======================================
 
 
@@ -21,17 +21,11 @@
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
-        TreeNode* curr = root;
-        if(curr == NULL){
+        if(root == NULL)
             return 0;
-        }
+        int left = maxDepth(root->left);
+        int right = maxDepth(root->right);
 
-        // depth of the left nodes
-        int d1 = maxDepth(curr->left);
-        // depth of the right nodes
-        int d2 = maxDepth(curr->right);
-        
-        int ans = max(d1,d2);
-        return ans+1;
+        return max(left,right)+1;
     }
 };
