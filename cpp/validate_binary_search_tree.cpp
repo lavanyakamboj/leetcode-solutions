@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/validate-binary-search-tree/
 // Synced by: LinkCode
-// Date: 8/30/2026, 8:49:34 PM
+// Date: 8/30/2026, 8:50:10 PM
 // ======================================
 
 
@@ -26,8 +26,7 @@ public:
     bool isValidBST(TreeNode* root) {
         if(root == NULL)
             return true;
-        prev = root;
-
+            
         if(!isValidBST(root->left))
             return false;
         if(prev != NULL && prev->val >= root->val)
