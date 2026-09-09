@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/find-the-duplicate-number/
 // Synced by: LinkCode
-// Date: 9/9/2026, 10:28:04 PM
+// Date: 9/9/2026, 10:30:11 PM
 // ======================================
 
 
@@ -23,7 +23,7 @@
 //     }
 // };
 
-// without extra space
+// without extra space but time - o(n log n)
 
 class Solution {
 public:
