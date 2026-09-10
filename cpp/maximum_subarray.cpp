@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/maximum-subarray/
 // Synced by: LinkCode
-// Date: 9/10/2026, 8:06:22 PM
+// Date: 9/10/2026, 8:24:10 PM
 // ======================================
 
 
@@ -15,13 +15,13 @@ public:
         int left =0;
         for(int right =0 ; right < nums.size() ; right++){
             curr = curr + nums[right];
-            maxSum = max(maxSum,curr);
+            // maxSum = max(maxSum,curr);
+            if(curr>maxSum)
+                    maxSum = curr;
             if(curr < 0) {
                 curr = 0;
             }
-
         }
-
         return maxSum;
     }
 };
