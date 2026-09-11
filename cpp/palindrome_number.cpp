@@ -3,23 +3,20 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/palindrome-number/
 // Synced by: LinkCode
-// Date: 7/30/2026, 9:33:59 PM
+// Date: 9/11/2026, 1:21:32 PM
 // ======================================
 
 
 class Solution {
 public:
-    bool isPalindrome(int x) {
-        if (x < 0) return false;
-
-        string s = to_string(x);
-        int i = 0, j = s.length() - 1;
-
-        while (i < j) {
-            if (s[i] != s[j]) return false;
-            i++;
-            j--;
-        }
-        return true;
+    bool isPalindrome(int n) {
+     int org= n;
+     long long rev = 0;
+     while(n>0){
+        int digit = n%10;
+        rev = rev *10 +digit;
+        n=n/10;
+     }   
+     return {org == rev};
     }
 };
