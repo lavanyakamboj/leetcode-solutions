@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/longest-substring-without-repeating-characters/
 // Synced by: LinkCode
-// Date: 9/17/2026, 10:50:43 PM
+// Date: 9/21/2026, 9:32:25 PM
 // ======================================
 
 
@@ -16,12 +16,10 @@ public:
         unordered_set<char> map;
 
         for (int right = 0; right < s.size(); right++) {
-
             while (map.count(s[right])) {
                 map.erase(s[left]);
                 left++;
             }
-
             map.insert(s[right]);
 
             ans = max(ans, right - left + 1);
