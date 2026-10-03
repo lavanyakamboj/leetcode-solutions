@@ -1,0 +1,30 @@
+// ======================================
+// LeetCode Problem: longest valid parentheses
+// Language: cpp
+// Link: https://leetcode.com/problems/longest-valid-parentheses/
+// Synced by: LinkCode
+// Date: 10/3/2026, 9:42:59 PM
+// ======================================
+
+
+class Solution {
+public:
+    int longestValidParentheses(string s) {
+        stack<int> st;
+        int res = 0;
+        st.push(-1);
+
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] == '(') {
+                st.push(i);
+            } else {
+                st.pop();
+                if (st.empty())
+                    st.push(i);
+                else
+                    res = max(res, i - st.top());
+            }
+        }
+        return res;
+    }
+};
