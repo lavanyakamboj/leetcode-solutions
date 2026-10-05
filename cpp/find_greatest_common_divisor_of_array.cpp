@@ -3,27 +3,20 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/find-greatest-common-divisor-of-array/
 // Synced by: LinkCode
-// Date: 7/18/2026, 5:03:22 PM
+// Date: 10/5/2026, 11:44:56 AM
 // ======================================
 
 
 class Solution {
 public:
     int findGCD(vector<int>& nums) {
-        int smallest = INT_MAX;
-        int largest = INT_MIN;
-        for(int i=0; i<nums.size(); i++){
-            if(nums[i] >largest){
-                largest = nums[i];
-            }
-            if(nums[i]<smallest){
-                smallest = nums[i];
-            }
+        sort(nums.begin(), nums.end());
+        int small = nums[0];
+        int large = nums[nums.size()-1];
+        while(large !=0){
+            small = small % large;
+            swap(small , large);
         }
-        while(largest != 0){
-            smallest = smallest % largest;
-            swap(smallest,largest);
-        }
-        return smallest;
+        return small;
     }
 };
