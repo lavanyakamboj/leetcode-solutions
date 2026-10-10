@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/minimum-sum-of-squared-difference/
 // Synced by: LinkCode
-// Date: 10/10/2026, 10:32:43 PM
+// Date: 10/10/2026, 11:08:19 PM
 // ======================================
 
 
