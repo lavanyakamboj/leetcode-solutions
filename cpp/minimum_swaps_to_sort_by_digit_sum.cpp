@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/minimum-swaps-to-sort-by-digit-sum/
 // Synced by: LinkCode
-// Date: 10/17/2026, 10:15:07 PM
+// Date: 10/17/2026, 10:15:26 PM
 // ======================================
 
 
@@ -23,7 +23,6 @@ public:
 
     int minSwaps(vector<int>& nums) {
         int n = nums.size();
-
         vector<pair<int, int>> arr;
 
         for (int i = 0; i < n; i++) {
@@ -40,13 +39,23 @@ public:
             return s1 < s2;
         });
 
+        vector<bool> visited(n, false);
         int swaps = 0;
 
         for (int i = 0; i < n; i++) {
-            while (arr[i].second != i) {
-                swap(arr[i], arr[arr[i].second]);
-                swaps++;
+            if (visited[i] || arr[i].second == i)
+                continue;
+
+            int j = i;
+            int cycleSize = 0;
+
+            while (!visited[j]) {
+                visited[j] = true;
+                j = arr[j].second;
+                cycleSize++;
             }
+
+            swaps += cycleSize - 1;
         }
 
         return swaps;
