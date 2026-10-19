@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/find-target-indices-after-sorting-array/
 // Synced by: LinkCode
-// Date: 10/19/2026, 9:18:52 PM
+// Date: 10/19/2026, 9:20:20 PM
 // ======================================
 
 
@@ -13,6 +13,7 @@ public:
         sort(nums.begin(),nums.end());
         vector<int> res;
         for(int i = 0 ; i<nums.size(); i++){
+            // in sorted array if element greater then target break loop
             if(nums[i]>target){
                 break;
             }
