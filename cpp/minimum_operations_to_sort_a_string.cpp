@@ -3,27 +3,33 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/minimum-operations-to-sort-a-string/
 // Synced by: LinkCode
-// Date: 10/21/2026, 7:59:45 PM
+// Date: 10/21/2026, 8:00:01 PM
 // ======================================
 
 
 class Solution {
 public:
     int minOperations(string s) {
-        string t = s;
-        sort(t.begin(), t.end());
-
-        if (s == t) return 0;
-
         int n = s.size();
+        char mn = *min_element(s.begin(), s.end());
+        char mx = *max_element(s.begin(), s.end());
 
+        bool sorted = true;
+        for (int i = 1; i < n; i++) {
+            if (s[i] < s[i - 1]) {
+                sorted = false;
+                break;
+            }
+        }
+
+        if (sorted) return 0;
         if (n == 2) return -1;
 
-        if (s[0] == t[0] || s[n - 1] == t[n - 1])
+        if (s[0] == mn || s[n - 1] == mx)
             return 1;
 
         for (int i = 1; i < n - 1; i++) {
-            if (s[i] == t[0] || s[i] == t[n - 1])
+            if (s[i] == mn || s[i] == mx)
                 return 2;
         }
 
